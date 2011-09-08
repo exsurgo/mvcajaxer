@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Ajax.Update(title: ViewBag.Title as string, address: "/"))
+{
+
+    <h2>@ViewBag.Message</h2>
+    <p>
+        To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+    </p>
+    
+    <p>@LorumIpsumGenerator.Generate(100)</p>
+    
+}

@@ -1,0 +1,32 @@
+﻿
+@using (Ajax.Replace(id: "login-status"))
+{
+
+    if (IsLoggedIn)
+    {
+        <text>Welcome <strong>@ViewBag.UserName</strong>!
+        [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+    }
+    else
+    {
+        @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+    }
+
+}
+
+@* Need to check view data and Request.IsAuthenticated *@
+@functions {
+
+    private bool IsLoggedIn
+    {
+        get
+        {
+            if (ViewData["IsLoggedIn"] != null)
+            {
+                return ViewBag.IsLoggedIn == true;
+            }
+            else return Request.IsAuthenticated;
+        }
+    }
+
+}

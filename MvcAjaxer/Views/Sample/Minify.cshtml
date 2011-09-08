@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Minify HTML";
+}
+
+@using (Ajax.Update(title: ViewBag.Title as string)) {
+ 
+
+    <h2>Minify HTML</h2>
+
+    <p>
+        The view HTML can be minified by implementing a custom Razor HostFactory, which can reduce bandwidth by 10%-30%. <br /><br />
+        To implement in this project, add <b>"&lt;host factoryType="System.Web.Mvc.Razor.MinifyHtmlWebRazorHostFactory" /&gt;"</b> 
+        to <b>"/Views/Web.config."</b>, and rebuild the project.  Note that this minification occurs before the view is compiled,
+        so the performance hit only occurs once, while the gain is seen on every request.
+    </p>
+    <br />
+    <p>This this article for more info ... <a href="http://cestdumeleze.net/blog/2011/minifying-the-html-with-asp-net-mvc-and-razor/">Read More...</a></p>
+    <br />
+    
+}

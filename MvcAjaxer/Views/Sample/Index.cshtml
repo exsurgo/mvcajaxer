@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Ajax Samples";
+}
+
+@using (Ajax.Update(title: ViewBag.Title as string))
+{
+
+    <fieldset>
+        <legend>Window</legend>
+         <p>
+            <a href="@Url.Action("Window", "Sample")">Update</a> - Show content in a model window
+        </p>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Replace</legend>
+        <p>
+            <a href="@Url.Action("Replace", "Sample")">Update</a> - Replace an existing element
+        </p>
+        <br />
+        <div id="div-to-replace" class="before-update-style">
+            This div should be replaced.
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Insert</legend>
+        <p>
+            <a href="@Url.Action("Insert", "Sample")">Update</a> - Insert element in an existing element
+        </p>
+        <br />
+        <div id="div-to-insert" class="before-update-style">
+            The new div should be inserted here
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Append & Prepend</legend>
+        <p>
+            <a href="@Url.Action("Append", "Sample")">Append</a> | 
+            <a href="@Url.Action("Prepend", "Sample")">Prepend</a>
+        </p>
+        <br />
+        <div id="add-to-div" class="before-update-style">
+            <div class="before-update-style">Already existing div</div>
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Multiple Updates</legend>
+        <p>
+            <a href="@Url.Action("Multiple", "Sample")">Update</a> - Two updates in one response
+        </p>
+        <br />
+        <div id="multi-update-div" class="before-update-style">
+            This div should be replaced.  And a modal window should show
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Tables - Rows & SubRows</legend>
+        <table id="my-table" class="grid">
+            <caption>
+                Parent Table
+                <a href="@Url.Action("Row", "Sample")">Add Row</a>
+            </caption>
+            <tr>
+                <td><a href="@Url.Action("SubRow", "Sample")">View Data</a></td>
+                <td>123</td>
+                <td>1/7/2010</td>
+            </tr>
+            <tr>
+                <td><a href="@Url.Action("SubRow", "Sample")">View Data</a></td>
+                <td>123</td>
+                <td>1/7/2010</td>
+            </tr>            
+            <tr>
+                <td><a href="@Url.Action("SubRow", "Sample")">View Data</a></td>
+                <td>123</td>
+                <td>1/7/2010</td>
+            </tr>            
+            <tr>
+                <td><a href="@Url.Action("SubRow", "Sample")">View Data</a></td>
+                <td>123</td>
+                <td>1/7/2010</td>
+            </tr>            
+            <tr>
+                <td><a href="@Url.Action("SubRow", "Sample")">View Data</a></td>
+                <td>123</td>
+                <td>1/7/2010</td>
+            </tr>        
+        </table>
+    </fieldset>
+    
+}

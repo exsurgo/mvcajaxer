@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "About Us";
+}
+
+@using (Ajax.Update(title: ViewBag.Title as string))
+{
+
+    <h2>About</h2>
+    <p>
+         @LorumIpsumGenerator.Generate(300)
+    </p>
+
+}
